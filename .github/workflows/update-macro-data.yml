@@ -2,12 +2,11 @@ name: 更新宏观数据
 
 on:
   schedule:
-    # 每天运行4次：UTC时间 0点, 6点, 12点, 18点（北京时间 8点, 14点, 20点, 次日2点）
     - cron: '0 0,6,12,18 * * *'
-  workflow_dispatch:  # 允许手动运行
+  workflow_dispatch:
   push:
     paths:
-      - 'fetch_macro_data.py'  # 当脚本更新时也运行
+      - 'fetch_macro_data.py'
 
 jobs:
   update-data:
@@ -26,7 +25,7 @@ jobs:
       
       - name: 安装依赖
         run: |
-          pip install requests pandas beautifulsoup4 lxml
+          pip install requests pandas
       
       - name: 运行数据采集脚本
         run: python fetch_macro_data.py
@@ -35,8 +34,8 @@ jobs:
         run: |
           echo "当前目录文件列表:"
           ls -la
-          echo "macro_score.csv 内容:"
-          cat macro_score.csv || echo "文件不存在"
+          echo "macro_score.csv 最后5行:"
+          tail -5 macro_score.csv || echo "文件不存在"
       
       - name: 提交更新
         run: |
