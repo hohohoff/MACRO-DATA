@@ -1,5 +1,4 @@
 timestamp,macro_score,oil_price,term_premium,rate_hike
-2026-09-27 16:20:49,0,83.9,0.104,False
 2026-09-27 20:50:01,0,83.9,0.104,False
 2026-09-28 03:30:20,0,83.9,0.104,False
 2026-09-28 12:50:30,0,83.9,0.104,False
@@ -99,3 +98,4 @@ timestamp,macro_score,oil_price,term_premium,rate_hike
 2026-10-25 03:05:33,1,85.5,0.104,False
 2026-10-25 10:39:45,3,97.31,0.104,False
 2026-10-25 15:30:34,3,97.31,0.104,False
+2026-10-25 20:20:56,3,97.31,0.104,False
